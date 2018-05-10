@@ -11,11 +11,11 @@ public:
   void set_radius(double R);
 
   //Accesors
-  double Radius();
-  double Diameter();
-  double Circumference();
-  double Area();
-  double Volume();
+  double getRadius();
+  double getDiameter();
+  double getCircumference();
+  double getArea();
+  double getVolume();
   void DisplayInfo();
 
 private:
