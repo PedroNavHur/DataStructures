@@ -105,7 +105,8 @@ void testFactorial(){
   cout << "The Factorial is: " << Factorial(num) << endl;
 }
 
-// Fibonacci Recursive Algorithms !Inneficient
+
+// Fibonacci Recursive Algorithms -Inneficient!!!
 long Fib(long n){
   if (n <= 1) {
     return n;
@@ -113,9 +114,8 @@ long Fib(long n){
     return Fib(n-1) + Fib(n-2);
   }
 }
-// Fibonacci Recursive Driver !!!Inneficient
+// Fibonacci Recursive Driver -Inneficient!!!
 void testFib(){
-
   int num;
   cout << "Testing Fibonacci" << endl;
   cout << "Enter an integer: ";
@@ -123,6 +123,26 @@ void testFib(){
   cout << "The Fibonacci "<< num <<"th is: " << Fib(num) << endl;
 }
 
+
+// Reverse Integer Algorithm
+void ReverseInt(int n){
+  if (n < 10) {
+    cout << n;
+  } else {
+    cout << n % 10;
+    ReverseInt(n / 10);
+  }
+}
+// Reverse Integer Driver
+void testReverseInt(){
+  int num;
+  cout << "Testing reverse integer" << endl;
+  cout << "Enter an integer: ";
+  cin >> num;
+  cout << "The reversed integer is: ";
+  ReverseInt(num);
+  cout << endl;
+}
 
 /* Menu */
 void showMenu(){
@@ -133,6 +153,7 @@ void showMenu(){
    << "  '4' for Reverse String"<< endl
    << "  '5' for Factorial"<< endl
    << "  '6' for Fibonacci" << endl
+   << "  '7' for Reverse Integer" << endl
    << "Enter '-1' to exit";
 }
 
@@ -163,6 +184,9 @@ int main(){
         break;
       case 6:
         testFib();
+        break;
+      case 7:
+        testReverseInt();
         break;
     }
   }
