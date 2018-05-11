@@ -6,9 +6,9 @@ using namespace std;
 
 int main(){
   // Calling the Parametized Constructor
-  sphere sphereA(5.1);
+  Sphere sphereA(5.1);
   // Calling the Default Constructor
-  sphere sphereB;
+  Sphere sphereB;
 
   // Testing the spheres
   sphereA.DisplayInfo();
