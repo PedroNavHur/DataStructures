@@ -33,7 +33,7 @@ Sphere::~Sphere(){}
    return 4.0 * PI * TheRadius * TheRadius;
  }
  double Sphere::getVolume(){
-   return (getArea * TheRadius) / 3.0;
+   return (getArea() * TheRadius) / 3.0;
  }
 
  void Sphere::DisplayInfo(){
