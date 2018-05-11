@@ -2,6 +2,7 @@
 // @author: Pedro Navarrete
 
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -9,7 +10,11 @@ using namespace std;
 
 /* Arithmetic Summation Series*/
 long ArithSeries(long X){
-
+  if (X <= 1) {
+    return X;
+  } else {
+    return X + ArithSeries(X-1);
+  }
 }
 
 
@@ -31,6 +36,7 @@ void ReverseString(char S[], int index){
 }
 
 /// Algorithm Drivers ///
+
 void testArithSeries(){
 
 }
@@ -42,19 +48,24 @@ void testArithSumSeries(){
 void testLGF(){
 
 }
+
 void testReverseString(){
 
 }
 
-int main(){
-  int n = 0;
+/* Menu */
+void showMenu(){
   cout << "Test Recursion Algorithms" << endl
    << "To test SumSeries type 1" << endl
    << "To test SumXY type 2" << endl
    << "To test Euclid LGM type 3" << endl
    << "To test Reverse String type 4" << endl
    << "Type '-1' to exit" << endl;
+}
 
+int main(){
+  int n = 0;
+  showMenu()l
   while(n != -1){
     cin >> n;
     switch (n) {
@@ -70,7 +81,7 @@ int main(){
       case 4:
         testReverseString();
         break;
-
+      default:
     }
   }
 
