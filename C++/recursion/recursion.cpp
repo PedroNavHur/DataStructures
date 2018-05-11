@@ -96,6 +96,7 @@ float Factorial(float n){
     return n * Factorial(n - 1);
   }
 }
+// Factorial Driver
 void testFactorial(){
   float num;
   cout << "Testing Factorial" << endl;
@@ -104,16 +105,34 @@ void testFactorial(){
   cout << "The Factorial is: " << Factorial(num) << endl;
 }
 
+// Fibonacci Recursive Algorithms !Inneficient
+long Fib(long n){
+  if (n <= 1) {
+    return n;
+  } else {
+    return Fib(n-1) + Fib(n-2);
+  }
+}
+// Fibonacci Recursive Driver !!!Inneficient
+void testFib(){
+
+  int num;
+  cout << "Testing Fibonacci" << endl;
+  cout << "Enter an integer: ";
+  cin >> num;
+  cout << "The Fibonacci "<< num <<"th is: " << Fib(num) << endl;
+}
 
 
 /* Menu */
 void showMenu(){
   cout << "Recursion Algorithms Driver, enter..." << endl
-   << "  '1' for Summation Series Enter"<< endl
-   << "  '2' for Summation Between Two Numbers Enter"<< endl
-   << "  '3' for Largest Common Factor Enter"<< endl
-   << "  '4' for Reverse String Enter"<< endl
-   << "  '5' for Factorial Enter"<< endl
+   << "  '1' for Summation Series"<< endl
+   << "  '2' for Summation Between Two Numbers"<< endl
+   << "  '3' for Largest Common Factor"<< endl
+   << "  '4' for Reverse String"<< endl
+   << "  '5' for Factorial"<< endl
+   << "  '6' for Fibonacci" << endl
    << "Enter '-1' to exit";
 }
 
@@ -141,6 +160,9 @@ int main(){
         break;
       case 5:
         testFactorial();
+        break;
+      case 6:
+        testFib();
         break;
     }
   }
