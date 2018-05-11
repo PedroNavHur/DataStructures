@@ -23,12 +23,10 @@ float ArithSumSeries(float X, float Y){
 
 }
 
-
 /* Largest Comon Factor - with Euclid's Method */
-int LGF(int P, int Q){
+int LCF(int P, int Q){
 
 }
-
 
 /* Reverse String */
 void ReverseString(char S[], int index){
@@ -38,14 +36,19 @@ void ReverseString(char S[], int index){
 /// Algorithm Drivers ///
 
 void testArithSeries(){
+  long n;
+  cout << "Testing Summation Series" << endl;
+  cout << "Type a number: ";
+  cin >> n;
 
+  cout << "The Summation is: " << ArithSeries(n) << endl;
 }
 
 void testArithSumSeries(){
 
 }
 
-void testLGF(){
+void testLCF(){
 
 }
 
@@ -56,18 +59,20 @@ void testReverseString(){
 /* Menu */
 void showMenu(){
   cout << "Test Recursion Algorithms" << endl
-   << "To test SumSeries type 1" << endl
-   << "To test SumXY type 2" << endl
-   << "To test Euclid LGM type 3" << endl
-   << "To test Reverse String type 4" << endl
-   << "Type '-1' to exit" << endl;
+   << " To test Summation Series type '1'" << endl
+   << " To test Summation Between Two Numbers type '2'" << endl
+   << " To test Largest Common Factor type '3'" << endl
+   << " To test Reverse String type '4'" << endl
+   << " Type '-1' to exit" << endl << endl
+   << "Test Option? ";
 }
 
 int main(){
   int n = 0;
-  showMenu()l
+  showMenu();
   while(n != -1){
     cin >> n;
+    cout << endl;
     switch (n) {
       case 1:
         testArithSeries();
@@ -76,13 +81,13 @@ int main(){
         testArithSumSeries();
         break;
       case 3:
-        testLGF();
+        testLCF();
         break;
       case 4:
         testReverseString();
         break;
-      default:
     }
+    cout << "\n\nTest Option? ";
   }
 
 
