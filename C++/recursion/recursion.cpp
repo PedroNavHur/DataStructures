@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <stdlib.h>
+#include <cstring>
+#include <iomanip>
 
 using namespace std;
 
@@ -46,7 +48,7 @@ void testArithSumSeries(){
   cout << "The Summation is: " << ArithSumSeries(a, b) << endl;
 }
 
-// Largest Comon Factor - with Euclid's Method
+// Largest Comon Factor - with Euclid's Method Algorithm
 int LCF(int P, int Q){
   if (P % Q == 0) {
     return Q;
@@ -65,32 +67,63 @@ void testLCF(){
 
 }
 
-/* Reverse String */
-void ReverseString(char S[], int index){
 
+// Reverse String Algorithm
+void ReverseString(char S[], int i){
+  if (i >= 0){
+    cout << S[i];
+    ReverseString(S, --i);
+  }
 }
-
-
-
+// Reverse String Driver
 void testReverseString(){
+  int MAX = 99;
+  char line[MAX+1];
+  cout << "Testing Reverse String" << endl;
+  cout << "Enter string..." << endl;
+  cin.ignore();
+  cin.get(line, MAX);
 
+  cout << "The reversed string is: " << endl;
+  ReverseString(line, strlen(line) -1);
 }
+
+// Factorial Algorithm
+float Factorial(float n){
+  if ( n <= 1) {
+    return 1;
+  } else {
+    return n * Factorial(n - 1);
+  }
+}
+void testFactorial(){
+  float num;
+  cout << "Testing Factorial" << endl;
+  cout << "Enter an integer: ";
+  cin >> num;
+  cout << "The Factorial is: " << Factorial(num) << endl;
+}
+
+
 
 /* Menu */
 void showMenu(){
-  cout << "Test Recursion Algorithms" << endl
-   << " To test Summation Series Enter '1'" << endl
-   << " To test Summation Between Two Numbers Enter '2'" << endl
-   << " To test Largest Common Factor Enter '3'" << endl
-   << " To test Reverse String Enter '4'" << endl
-   << " Enter '-1' to exit" << endl << endl
-   << "Test Option? ";
+  cout << "Recursion Algorithms Driver, enter..." << endl
+   << "  '1' for Summation Series Enter"<< endl
+   << "  '2' for Summation Between Two Numbers Enter"<< endl
+   << "  '3' for Largest Common Factor Enter"<< endl
+   << "  '4' for Reverse String Enter"<< endl
+   << "  '5' for Factorial Enter"<< endl
+   << "Enter '-1' to exit";
 }
 
+/* Main Program */
 int main(){
+  cout << fixed << setprecision(0);
   int n = 0;
   showMenu();
   while(n != -1){
+    cout << "\n\nTest Option? ";
     cin >> n;
     cout << endl;
     switch (n) {
@@ -106,8 +139,10 @@ int main(){
       case 4:
         testReverseString();
         break;
+      case 5:
+        testFactorial();
+        break;
     }
-    cout << "\n\nTest Option? ";
   }
 
 
