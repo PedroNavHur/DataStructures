@@ -17,7 +17,7 @@ long ArithSeries(long X){
   }
 }
 // Arithmetic Series Driver
-void testArithSeries(){
+void testArithSeries() {
   long n;
   cout << "Testing Summation Series" << endl;
   cout << "Enter a number: ";
@@ -77,7 +77,7 @@ void ReverseString(char S[], int i){
 }
 // Reverse String Driver
 void testReverseString(){
-  int MAX = 99;
+  const int MAX = 99;
   char line[MAX+1];
   cout << "Testing Reverse String" << endl;
   cout << "Enter string..." << endl;
